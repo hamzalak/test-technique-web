@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { database } from "../../firebase";
 import { Equipement } from "../../model/Equipement";
+import { Link } from "react-router-dom";
 
 export function EquipementsTable() {
   const [equipements, setEquipements] = useState<Record<string, Equipement>>();
@@ -16,7 +17,13 @@ export function EquipementsTable() {
 
   return (
     <>
-      {equipements && Object.keys(equipements).map((key) => <div> {key} </div>)}
+      {equipements &&
+        Object.keys(equipements).map((key) => (
+          <div>
+            {key} ,,,,,
+            {<Link to={key}>Voir Détails</Link>}
+          </div>
+        ))}
     </>
   );
 }
