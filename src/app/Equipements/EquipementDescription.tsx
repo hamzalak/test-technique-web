@@ -1,3 +1,10 @@
+import { useSelector } from "react-redux";
+import { getTheActualEquipment } from "../redux/equipements/selectors";
+
 export function EquipementDescription() {
-  return <div>balalablh</div>;
+  const elem = useSelector(getTheActualEquipment);
+
+  console.log(elem);
+
+  return <div>juhjkhg</div>;
 }

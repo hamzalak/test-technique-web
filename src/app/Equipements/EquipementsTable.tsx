@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
-import { database } from "../../firebase";
-import { Equipement } from "../../model/Equipement";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllEquipements } from "../redux/equipements/selectors";
+import { ActionEnum } from "../redux/equipements/DispatchType";
 
 export function EquipementsTable() {
-  const [equipements, setEquipements] = useState<Record<string, Equipement>>();
-
-  useEffect(() => {
-    const getEquipements = async () => {
-      const ref = database.ref();
-      const equipements = await ref.child("Equipments").get();
-      setEquipements(equipements.val());
-    };
-    getEquipements();
-  }, []);
+  const equipements = useSelector(getAllEquipements);
+  const dispatch = useDispatch();
 
   return (
     <>
       {equipements &&
         Object.keys(equipements).map((key) => (
-          <div>
+          <div key={key}>
             {key} ,,,,,
-            {<Link to={key}>Voir Détails</Link>}
+            {
+              <Link
+                onClick={() =>
+                  dispatch({ type: ActionEnum.FETCH_EQUIPEMENT, payload: key })
+                }
+                to={key}
+              >
+                Voir Détails
+              </Link>
+            }
           </div>
         ))}
     </>
