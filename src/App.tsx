@@ -6,6 +6,7 @@ import { EquipementDescription } from "./app/Equipements/EquipementDescription";
 import { EquipementsTable } from "./app/Equipements/EquipementsTable";
 import { Home } from "./app/Home";
 import { ActionEnum } from "./app/redux/equipements/DispatchType";
+import { RoutesEnum } from "./app/utils/routeNames";
 import { database } from "./firebase";
 import { Equipement } from "./model/Equipement";
 
@@ -32,19 +33,22 @@ function App() {
               payload: equipements,
             })
           }
-          to="/equipements"
+          to={RoutesEnum.EQUIPEMENTS}
         >
           Liste des Equipements
         </Link>
         <br />
-        <Link to="/home">Home</Link>
+        <Link to={RoutesEnum.HOME}>Home</Link>
         <br />
       </div>
       <Routes>
-        <Route path="/equipements" element={<EquipementsTable />}></Route>
-        <Route path="/" element={<Home />}></Route>
         <Route
-          path="/equipements/:equipementId"
+          path={RoutesEnum.EQUIPEMENTS}
+          element={<EquipementsTable />}
+        ></Route>
+        <Route path={RoutesEnum.HOME} element={<Home />}></Route>
+        <Route
+          path={RoutesEnum.SINGLEEQUIPEMENT}
           element={<EquipementDescription />}
         />
       </Routes>
