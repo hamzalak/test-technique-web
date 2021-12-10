@@ -1,19 +1,19 @@
 import { database } from "./../firebase";
 
 describe("List équipement et checkpoints", () => {
-  it("should not be undefined if calling Equipements from firebase", () => {
+  it("should not be undefined if calling Equipements from firebase", async () => {
     const ref = database.ref();
 
-    const equipements = ref.child("Equipements").get();
+    const equipements = await ref.child("Equipments").get();
 
-    expect(equipements).toBeDefined();
+    expect(equipements.exists()).toBe(true);
   });
 
-  it("should not be undefined if calling Checkpoints from firebase", () => {
+  it("should not be undefined if calling Checkpoints from firebase", async () => {
     const ref = database.ref();
 
-    const checkpoints = ref.child("Checkpoints").get();
+    const checkpoints = await ref.child("Checkpoints").get();
 
-    expect(checkpoints).toBeDefined();
+    expect(checkpoints.exists()).toBe(true);
   });
 });
