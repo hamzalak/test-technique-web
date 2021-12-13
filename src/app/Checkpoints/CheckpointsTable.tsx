@@ -14,7 +14,7 @@ export function CheckpointsTable({
   return (
     <Drawer
       title={"Checkpoints"}
-      headerStyle={{ backgroundColor: "#fdfbe2" }}
+      headerStyle={{ backgroundColor: "#f5d478" }}
       placement={"left"}
       width={750}
       closable={false}

@@ -15,15 +15,19 @@ export function Header() {
         top: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: "#fdfbe2",
+        backgroundColor: "#f5d478",
       }}
     >
       <Breadcrumb style={{ marginTop: "20px" }} separator=">">
         <Breadcrumb.Item>
-          <Link to={RoutesEnum.EQUIPEMENTS}>Liste des Equipements</Link>
+          <Link to={RoutesEnum.EQUIPEMENTS}>
+            <b> Liste des Equipements</b>
+          </Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-          <Link to={RoutesEnum.HOME}>Home</Link>
+          <Link to={RoutesEnum.HOME}>
+            <b>Home</b>
+          </Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
           <img
