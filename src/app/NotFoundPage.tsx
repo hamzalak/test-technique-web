@@ -1,6 +1,6 @@
 import Typewriter from "typewriter-effect";
 
-export function Home() {
+export function NotFoundPage() {
   return (
     <>
       <div
@@ -15,7 +15,7 @@ export function Home() {
         <Typewriter
           onInit={() => {}}
           options={{
-            strings: ["Test", "Technique", "Beeldi"],
+            strings: ["Page Non Trouvé", "404"],
             autoStart: true,
             loop: true,
             deleteSpeed: 50,
