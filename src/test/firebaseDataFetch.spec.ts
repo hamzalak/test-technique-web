@@ -17,3 +17,21 @@ describe("List équipement et checkpoints", () => {
     expect(checkpoints.exists()).toBe(true);
   });
 });
+
+describe("List checkpoint relatif à un équipement", () => {
+  const arr: (string | null)[] = [];
+  it("should return all checkpoints related to equipements ; example LHXpVfII4J53rgKtuAi", async () => {
+    database
+      .ref("checkpoints")
+      .orderByChild("equipmentKey")
+      .equalTo("-LHXpVfII4J53rgKtuAi")
+      //.equal("-LHXpVfII4J53rgKtuAi")
+      .once("value", function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+          arr.push(childSnapshot.key);
+        });
+      });
+
+    expect(arr).toHaveLength;
+  });
+});
