@@ -2,7 +2,7 @@ import { Breadcrumb, Layout } from "antd";
 import { Link } from "react-router-dom";
 import { useLoadEquipements } from "../hooks/useLoadEquipements";
 import { RoutesEnum } from "../utils/routeNames";
-import beeldiImage from "../../index.jpg";
+import beeldiImage from "../../beeldi-logo.jpg";
 const { Header: AntdHeader } = Layout;
 export function Header() {
   useLoadEquipements();
