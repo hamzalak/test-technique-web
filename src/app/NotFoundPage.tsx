@@ -15,7 +15,7 @@ export function NotFoundPage() {
         <Typewriter
           onInit={() => {}}
           options={{
-            strings: ["Page Non Trouvé", "404"],
+            strings: ["Page Non Trouvée", "404"],
             autoStart: true,
             loop: true,
             deleteSpeed: 50,
