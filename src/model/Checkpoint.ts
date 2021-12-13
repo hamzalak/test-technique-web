@@ -2,6 +2,6 @@ export interface Checkpoint {
   equipmentKey: string;
   name: string;
   fault?: string;
-  recommandatio?: string;
+  recommandation?: string;
   photo: string;
 }
