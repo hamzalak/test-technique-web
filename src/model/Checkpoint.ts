@@ -3,4 +3,5 @@ export interface Checkpoint {
   name: string;
   fault?: string;
   recommandatio?: string;
+  photo: string;
 }
