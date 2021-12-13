@@ -10,11 +10,16 @@ import { CheckpointsTable } from "../Checkpoints/CheckpointsTable";
 import { ToolTwoTone } from "@ant-design/icons";
 import { database } from "../../firebase";
 import { Checkpoint } from "../../model/Checkpoint";
+import { useMediaQuery } from "react-responsive";
 
 export function EquipementDescription() {
   const equipement = useSelector(getTheActualEquipment);
 
   const [checkpointVisible, setCheckponitVisible] = useState(false);
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
+  const [span, setSpan] = useState<number | string>(0);
 
   const onCloseCheckpoints = () => setCheckponitVisible(false);
 
@@ -56,6 +61,14 @@ export function EquipementDescription() {
       });
     }
   });
+  //responsivness
+  useEffect(() => {
+    if (isTabletOrMobile) {
+      setSpan("");
+    } else {
+      setSpan(12);
+    }
+  }, [isTabletOrMobile]);
 
   const {
     name,
@@ -97,12 +110,12 @@ export function EquipementDescription() {
         />
       </Divider>
       <Row>
-        <Col span={12}>
+        <Col span={span}>
           <Card hoverable cover={<img alt="example" src={photo} />}>
             <Meta title={name} />
           </Card>
         </Col>
-        <Col span={12} style={{ paddingLeft: "10px" }}>
+        <Col span={span} style={{ paddingLeft: "10px" }}>
           <Descriptions title={<TiltleComponent />} bordered>
             <Descriptions.Item label="Nom">{name}</Descriptions.Item>
             <Descriptions.Item label="Batiment">{building}</Descriptions.Item>
