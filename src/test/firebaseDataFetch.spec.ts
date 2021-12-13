@@ -25,7 +25,6 @@ describe("List checkpoint relatif à un équipement", () => {
       .ref("checkpoints")
       .orderByChild("equipmentKey")
       .equalTo("-LHXpVfII4J53rgKtuAi")
-      //.equal("-LHXpVfII4J53rgKtuAi")
       .once("value", function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
           arr.push(childSnapshot.key);
