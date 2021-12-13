@@ -27,7 +27,7 @@ export function CheckpointsTable({
         dataSource={checkpoints}
         renderItem={(item) => (
           <List.Item
-            key={item.name}
+            key={item.photo}
             extra={
               <img
                 width={272}

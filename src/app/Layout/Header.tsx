@@ -35,6 +35,7 @@ export function Header() {
             width={35}
             height={25}
             src={beeldiImage}
+            alt="beeldi logo"
           />
         </Breadcrumb.Item>
       </Breadcrumb>
