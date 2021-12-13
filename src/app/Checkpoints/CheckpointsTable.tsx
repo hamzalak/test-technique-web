@@ -27,7 +27,6 @@ export function CheckpointsTable({
         dataSource={checkpoints}
         renderItem={(item) => (
           <List.Item
-            key={item.photo}
             extra={
               <img
                 width={272}
@@ -46,7 +45,7 @@ export function CheckpointsTable({
               }
               description={
                 <OptionalCheckpointDescription
-                  text={item.recommandatio}
+                  text={item.recommandation}
                   option={"Recommandation"}
                 />
               }
